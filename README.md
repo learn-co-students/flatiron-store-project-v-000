@@ -13,12 +13,12 @@ We're going to build an e-commerce site! We're going to make an online store whe
 ### Tasks:
 
 1. Models and Associations
-* Use the unit tests to guide your model associations
+  * Use the unit tests to guide your model associations
 
 2. Functionality through class and instance methods
-* Use the integration tests to guide functionality
+  * Use the integration tests to guide functionality
 
 3. Omniauth (Github)
-* Use the integration tests
+  * Use the integration tests
 
 ## Resources
