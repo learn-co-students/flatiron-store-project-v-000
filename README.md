@@ -1,40 +1,24 @@
-# Rails Flatiron Store
+---
+tags: full-application, associations, omniauth, intermediate
+language: ruby
+resources: 0
+---
 
-## Description
+# Flatiron Store on Rails
 
-Add a short description of your app.
+We're going to build an e-commerce site! We're going to make an online store where users can browse items, put items in their carts, and buy items, which changes our inventory. Users can log in using Github. We're eventually going to integrate the Stripe API to handle payments, and then integrate Segment.io to analyze user events.
 
-## Screenshots
+## First iteration
 
-Add some spiffy screenshots of your app here.
+### Tasks:
 
-## Background
+1. Models and Associations
+* Use the unit tests to guide your model associations
 
-Why did you want to make this app? What was your development process
-like?
+2. Functionality through class and instance methods
+* Use the integration tests to guide functionality
 
-## Features
+3. Omniauth (Github)
+* Use the integration tests
 
-Bullet point some of the key features of your app here.
-
-## Usage
-
-How do users use your app?
-
-## Development/Contribution
-
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
-
-## Future
-
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
-
-## Author
-
-Link to your blog, twitter, etc!
-
-## License
-
-Rails Flatiron Store is MIT Licensed. See LICENSE for details.
+## Resources
