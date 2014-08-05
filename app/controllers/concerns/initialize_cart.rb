@@ -1,6 +1,6 @@
-module CurrentCart
+module InitializeCart
   extend ActiveSupport::Concern
-  
+
   private
   def initialize_cart
     if session[:cart_id]
@@ -10,3 +10,5 @@ module CurrentCart
       sesion[:cart_id] = @cart.id
     end
   end
+  
+end
