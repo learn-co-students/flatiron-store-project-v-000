@@ -7,7 +7,7 @@ module InitializeCart
       @cart = Cart.find(session[:cart_id])
     else
       @cart = Cart.create
-      sesion[:cart_id] = @cart.id
+      session[:cart_id] = @cart.id
     end
   end
   
