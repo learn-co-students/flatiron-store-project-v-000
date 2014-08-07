@@ -4,7 +4,6 @@ class StoreController < ApplicationController
   def index
     @items = Item.order(:title)
     @categories = Category.order(:title)
-    binding.pry
   end
   
 end

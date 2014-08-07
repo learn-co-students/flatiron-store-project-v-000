@@ -8,8 +8,8 @@ class Order < ActiveRecord::Base
   # when checkout happens, item inventory adjusts
 
   def change_inventory
-    self.cart.line_items.each do |item| 
-      item.item.inventory -= item.quantity
+    self.cart.line_items.each do |line_item| 
+      line_item.item.inventory -= line_item.quantity
     end 
   end
 end

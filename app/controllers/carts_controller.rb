@@ -2,8 +2,6 @@ class CartsController < ApplicationController
   before_filter :set_cart, only: [:checkout, :show]
 
   def checkout
-    @cart.create_order
-    @cart.change_inventory
   end
 
   def destroy
