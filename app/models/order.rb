@@ -8,6 +8,8 @@ class Order < ActiveRecord::Base
   # when checkout happens, status changes
   # when checkout happens, item inventory adjusts
 
+  # TODO: order should replace its cart so a user, when logged in, can see all of their past orders; carts will be deleted after a while, so can't access line_items through cart
+
   def self.create_from_cart(cart)
     self.create(
       cart_id: cart.id
