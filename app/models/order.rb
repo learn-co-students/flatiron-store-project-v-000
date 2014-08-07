@@ -22,6 +22,7 @@ class Order < ActiveRecord::Base
     if self.status = "submitted"
       self.cart.line_items.each do |line_item| 
         line_item.item.inventory -= line_item.quantity
+        line_item.item.save
       end
     end 
   end
