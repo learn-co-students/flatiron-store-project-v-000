@@ -15,10 +15,15 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 ### Tasks:
 
 1. Models and Associations
-* Use the unit tests to guide your model associations
+* Use the model tests to guide your model associations
 * Some hints:
   * We're going to treat our shopping cart like a session; a cart is instantiated and marked as a session when we add our first item to our cart.
   * line_items are like join tables between items and carts. They come into existance when we add an item to our cart.
+  * Orders are instantiated during checkout and belong to a cart. They will ask as a join table between a user and a cart.
+  * an Item has a title, price, and inventory (integer)
+  * a Category has a title
+  * a Line item has a quantity
+  * an Order has a status
 
 2. Functionality through class and instance methods and controller actions
   * Use the model tests to guide functionality
@@ -26,13 +31,13 @@ Before anything, note that when you generate models, controllers, etc, be sure t
     * add the same item more than once; the line_item's quantity should change in this event
     * display a total given the price/quantity of all line_items.
   * A user can buy items that they put in their cart, which changes the inventory of the item
-  * When a user checks out, an order object should be created. Orders will be replaced by carts, as carts should be deleted after some time (in a Raketask). A user will be able to view their order history when they log in.
+  * When a user checks out, an order object should be created. Orders will eventually be replaced by carts, as carts should be deleted after some time (in a Raketask). A user will be able to view their order history when they log in.
 
 3. Views for Program Flow
   * Add to cart buttons for each item
   * Navigation bar for visiting store home page and cart
-  * Cart link should only be visible if user has added items to the cart
-  * Checkout link
+  * Cart link should only be visible if user has added items to the cart (you should build helper methods in the `application_controller` to accomplish this)
+  * Checkout link (that is a POST request method on the carts controller)
 
 ## Second iteration
 
