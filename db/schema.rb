@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805222927) do
+ActiveRecord::Schema.define(version: 20140805200233) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -22,21 +22,7 @@ ActiveRecord::Schema.define(version: 20140805222927) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
   end
-
-  create_table "friendly_id_slugs", force: true do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "items", force: true do |t|
     t.string   "title"
@@ -59,12 +45,6 @@ ActiveRecord::Schema.define(version: 20140805222927) do
     t.integer  "user_id"
     t.integer  "cart_id"
     t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

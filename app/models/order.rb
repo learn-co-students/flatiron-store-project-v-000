@@ -1,6 +1,5 @@
 class Order < ActiveRecord::Base
   belongs_to :cart
-  belongs_to :user
   has_many :items, through: :cart
 
   # like a join between cart and user

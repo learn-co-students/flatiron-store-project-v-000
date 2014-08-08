@@ -18,7 +18,24 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.before(:each) do 
+    5.times do 
+    Item.create(
+      title: Faker::Commerce.product_name, 
+      inventory: Faker::Number.number(2), 
+      price: Faker::Commerce.price
+    )
+    Category.create(title: Faker::Commerce.department)
+    counter = 1
+    Item.all.each do |item|
+      item.category_id = counter
+      item.save
+      counter += 1
+    end
+    Cart.create
+  end
+end
+
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
