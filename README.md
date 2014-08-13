@@ -16,6 +16,7 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 
 1. Models and Associations
 * Use the model tests to guide your model associations
+* There's a seed file with some data generated with the Faker gem.
 * Some hints:
   * We're going to treat our shopping cart like a session; a cart is instantiated and marked as a session when we add our first item to our cart.
   * line_items are like join tables between items and carts. They come into existance when we add an item to our cart.
@@ -23,15 +24,15 @@ Before anything, note that when you generate models, controllers, etc, be sure t
   * an Item has a title, price, and inventory (integer)
   * a Category has a title
   * a Line item has a quantity
-  * an Order has a status
+  * an Order has a status and total (which comes from the cart's total)
 
 2. Functionality through class and instance methods and controller actions
   * Use the model tests to guide basic functionality; **there are no controller tests so use the following to guide your design:**
   * Our Cart should be able to:
     * add the same item more than once; the line_item's quantity should change in this event
-    * display a total given the price/quantity of all line_items (think about keeping this login out of the views!).
+    * display a total given the price/quantity of all line_items (think about keeping this logic out of the views!).
   * A user can buy items that they put in their cart, which changes the inventory of the item. Actual purchase functionality will come later through Stripe.
-  * When a user checks out, an order object should be created. Orders will eventually be replaced by carts, as carts should be deleted after some time (in a Raketask). A user will be able to view their order history when they log in.
+  * When a user checks out, an order object should be created. An order should have a status of "submitted" when checkout is complete, and its total should be set from the cart's total.
 
 3. Views for Program Flow
   * Add to cart buttons for each item
@@ -41,9 +42,8 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 
 ## Second iteration
 
-1. More user functionality and OmniAuth login
-2. The act of checking out creates a user, their order (turning the LineItems in carts into an order that belongs to a user)
-3. Stripe integration
+1. Stripe integration, cart object management
+2. Saving stripe data for user management
 
 ## Third iteration
 
