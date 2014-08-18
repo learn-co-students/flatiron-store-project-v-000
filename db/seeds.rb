@@ -1,5 +1,4 @@
 10.times do 
-  User.create(name: Faker::Name.name)
   Item.create(
     title: Faker::Commerce.product_name, 
     inventory: Faker::Number.number(2), 
