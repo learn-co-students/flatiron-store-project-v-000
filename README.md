@@ -1,5 +1,5 @@
 ---
-tags: full-application, associations, sessions, intermediate
+tags: full-application, associations, sessions, custom view helpers, intermediate
 language: ruby
 resources: 0
 ---
@@ -21,10 +21,10 @@ Before anything, note that when you generate models, controllers, etc, be sure t
   * We're going to treat our shopping cart like a session; a cart is instantiated and marked as a session when we add our first item to our cart.
   * line_items are like join tables between items and carts. They come into existance when we add an item to our cart.
   * Orders are instantiated during checkout and belong to a cart. They will act as a join table between a user and a cart.
-  * an Item has a title, price, and inventory (integer)
+  * an Item has a title, price (integer, in cents), and inventory (integer)
   * a Category has a title
   * a Line item has a quantity
-  * an Order has a status and total (which comes from the cart's total)
+  * an Order has a status and total (integer, in cents, which comes from the cart's total)
 
 2. Functionality through class and instance methods and controller actions
   * Use the tests to guide basic functionality
@@ -39,6 +39,7 @@ Before anything, note that when you generate models, controllers, etc, be sure t
   * Navigation bar for visiting store home page and cart
   * Cart link should only be visible if user has added items to the cart (you should build helper methods in the `application_controller` to accomplish this)
   * Checkout link (checkout should be a POST request method on the carts controller)
+  * Create a helper module in the `app/helpers` directory that will be used in our views to display our item prices and order and cart totals in a readable currency number (if the price is 4000 cents, display it as a readable 40.00).
 
 ## Second iteration
 
