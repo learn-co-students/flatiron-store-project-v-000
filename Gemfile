@@ -25,6 +25,9 @@ gem 'spring',        group: :development
 group :test, :development do
   gem "rspec-rails"
   gem "capybara"
+  gem "launchy"
+  gem "rack_session_access"
+  gem "capybara-webkit"
   gem "selenium-webdriver"
   gem "better_errors"
   gem "sprockets_better_errors"
