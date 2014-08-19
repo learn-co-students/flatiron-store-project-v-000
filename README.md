@@ -6,7 +6,7 @@ resources: 0
 
 # Flatiron Store on Rails
 
-We're going to build an e-commerce site! We're going to make an online store where users can browse items, put items in their carts, and buy items, which changes our inventory. Users can log in using Github. We're eventually going to integrate the Stripe API to handle payments, and then integrate Segment.io to analyze user events.
+We're going to build an e-commerce site! We're going to make an online store where users can browse items, put items in their carts, and buy items, which changes our inventory. We're eventually going to integrate the Stripe API to handle payments, and then integrate Segment.io to analyze user events.
 
 Before anything, note that when you generate models, controllers, etc, be sure to include this option, so that it skips tests (which we already have): `--no-test-framework`
 
@@ -27,7 +27,7 @@ Before anything, note that when you generate models, controllers, etc, be sure t
   * an Order has a status and total (which comes from the cart's total)
 
 2. Functionality through class and instance methods and controller actions
-  * Use the model tests to guide basic functionality; **there are no controller tests so use the following to guide your design:**
+  * Use the tests to guide basic functionality
   * Our Cart should be able to:
     * add the same item more than once; the line_item's quantity should change in this event
     * display a total given the price/quantity of all line_items (think about keeping this logic out of the views!).
@@ -42,8 +42,7 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 
 ## Second iteration
 
-1. Stripe integration, cart object management
-2. Saving stripe data for user management
+1. Stripe integration, order flow, cart object management
 
 ## Third iteration
 
