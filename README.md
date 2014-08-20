@@ -43,7 +43,7 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 
 ## Second iteration
 
-1. Stripe integration, order flow, cart object management
+1. Stripe integration and order flow
 
 ## Third iteration
 
