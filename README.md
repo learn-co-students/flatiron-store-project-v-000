@@ -41,6 +41,12 @@ Before anything, note that when you generate models, controllers, etc, be sure t
   * Checkout link (checkout should be a POST request method on the carts controller)
   * Create a helper module in the `app/helpers` directory that will be used in our views to display our item prices and order and cart totals in a readable currency number (if the price is 4000 cents, display it as a readable 40.00).
 
-## Up Next
+## Second iteration
 
-Stripe integration and order flow
+1. Stripe integration, order flow, cart object management
+
+## Third iteration
+
+1. Segment.io analysis of user events / behavior
+
+## Resources

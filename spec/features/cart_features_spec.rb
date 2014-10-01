@@ -1,5 +1,3 @@
-require_relative "../rails_helper.rb"
-
 describe 'Feature Test: Cart Session', :type => :feature do
   before do
     visit "/"
