@@ -13,41 +13,41 @@
 
 ActiveRecord::Schema.define(version: 20140805200233) do
 
-  create_table "carts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: true do |t|
+  create_table "items", force: :cascade do |t|
     t.string   "title"
     t.integer  "inventory"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.integer  "price"
     t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "line_items", force: true do |t|
+  create_table "line_items", force: :cascade do |t|
     t.integer  "cart_id"
     t.integer  "item_id"
     t.integer  "quantity",   default: 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  create_table "orders", force: true do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "cart_id"
     t.string   "status"
-    t.decimal  "total",      precision: 8, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
