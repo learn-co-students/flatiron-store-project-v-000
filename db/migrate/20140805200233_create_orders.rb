@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :cart_id
       t.string :status
       t.integer :total
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
