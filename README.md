@@ -1,9 +1,3 @@
----
-tags: full-application, associations, sessions, custom view helpers, intermediate
-language: ruby
-resources: 0
----
-
 # Flatiron Store on Rails
 
 We're going to build an e-commerce site! We're going to make an online store where users can browse items, put items in their carts, and buy items, which changes our inventory. We're eventually going to integrate the Stripe API to handle payments, and then integrate Segment.io to analyze user events.
