@@ -38,3 +38,5 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 ## Up Next
 
 Stripe integration and order flow
+
+<a href='https://learn.co/lessons/rails-flatiron-store' data-visibility='hidden'>View this lesson on Learn.co</a>
