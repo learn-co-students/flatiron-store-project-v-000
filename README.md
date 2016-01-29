@@ -39,4 +39,4 @@ Before anything, note that when you generate models, controllers, etc, be sure t
 
 Stripe integration and order flow
 
-<a href='https://learn.co/lessons/rails-flatiron-store' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-flatiron-store' title='Flatiron Store on Rails'>Flatiron Store on Rails</a> on Learn.co and start learning to code for free.</p>
