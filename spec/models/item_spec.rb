@@ -13,9 +13,7 @@ RSpec.describe Item, :type => :model do
     before do 
       @cart = Cart.first
       @line_item1 = @cart.add_item(@item.id)
-      @line_item1.save
       @line_item2 = @cart.add_item(@item.id)
-      @line_item2.save
     end
 
     it 'has many line_items consolidated by line_item quantity' do 

@@ -22,8 +22,7 @@ RSpec.describe Cart, :type => :model do
   end
 
   it 'consolidates multiple same line_items in add_item method' do 
-    @line_item2 = Cart.first.add_item(@item.id)
-    @line_item2.save
+    Cart.first.add_item(@item.id)
     expect(Cart.first.line_items.first.quantity).to eq(2)
   end
 end
