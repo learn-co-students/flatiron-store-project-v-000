@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe LineItem, :type => :model do
   before do 
     @item = Item.first
-    @line_item = Cart.first.add_item(@item.id)
-    @line_item.save
+    @cart = Cart.create
+    @line_item = @item.line_items.create(quantity: 1, cart: @cart)
   end
 
   it 'belongs to a cart' do 
-    expect(@line_item.cart).to eq(Cart.first)
+    expect(@line_item.cart).to eq(@cart)
   end
 
   it 'belongs to an item' do 
