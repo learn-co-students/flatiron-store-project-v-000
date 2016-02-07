@@ -1,8 +1,22 @@
+
 <nav class="">
     <ul>
         <li> <%= link_to "Store Home", store_path %> </li>
-        <% if !!@cart %>
+        <% if user_signed_in? && !!current_cart %>
           <li> <%= link_to "Cart", cart_path(current_cart) %></li>
         <% end %>
     </ul>
 </nav>
+
+<% if user_signed_in? %>
+  Signed in as <%= current_user.email %>. Not you?
+  <%= link_to "Edit profile", edit_user_registration_path %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+<% end %>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, id: "flash_#{name}" %>
+<% end %>
+<br />

@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :initialize_cart, only: [:create]
 
   def create
