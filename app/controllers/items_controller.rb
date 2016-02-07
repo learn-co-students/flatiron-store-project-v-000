@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_filter :set_item, only: [:show]
 
   def index
-    @items = Item.all
+    @items = Item.available_items
   end
 
   def show

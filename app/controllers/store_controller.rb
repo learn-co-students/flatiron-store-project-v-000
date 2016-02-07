@@ -2,7 +2,7 @@ class StoreController < ApplicationController
 
   def index
     # binding.pry
-    @items = Item.order(:title)
+    @items = Item.available_items.order(:title)
     @categories = Category.order(:title)
   end
   
