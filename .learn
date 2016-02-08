@@ -7,3 +7,11 @@ tags:
 languages:
   - ruby
 resources: 0
+project:
+  review_criteria:
+    - Users can sign up/login/logout
+    - Logged in users can add items to their cart, multiple of the same item updates quantity
+    - Logged in users can view their cart
+    - Logged in users can checkout, marking a cart as submitted
+    - Non logged in users can see all items with available inventory
+
