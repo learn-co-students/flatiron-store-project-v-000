@@ -1,7 +1,13 @@
 <h1><%= @category.title %></h1>
 
 <ul>
-<% @category.items.each do |item| %>
-    <li><%= link_to item.title, item_path(item) %></li>
+<% @items.each do |item| %>
+    <li><%= link_to item.title, item_path(item) %> - 
+    $<%= item.price.to_f/100  %></li>
+    <% if user_signed_in? %>
+    	<%= form_tag "/line_items/#{item.id}" do %>
+    		<%= submit_tag "Add to Cart" %>
+    	<% end %>
+    <% end %>
 <% end %>
 </ul>
