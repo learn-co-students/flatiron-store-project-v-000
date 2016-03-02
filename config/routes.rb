@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users
+  root 'store#index', as: 'store'
+
+  resources :items, only: [:show, :index]
+  resources :categories, only: [:show, :index]
+  resources :users, only: [:show]
+  get '/users/sign_out', to: 'store#index'
+  resources :carts
+  resources :line_items, only: [:create]
+  resources :orders, only: [:show]
+
+  post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
+
 end
