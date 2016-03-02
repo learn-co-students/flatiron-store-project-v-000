@@ -1,3 +1,1 @@
-<% @categories.each do |category| %>
-  <%= @category.title %>
-<% end %>
+<%= render partial: 'categories_index', locals: {categories: @categories} %>

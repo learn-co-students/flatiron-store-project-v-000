@@ -1,2 +1,3 @@
-<%= render @categories %> <br /><br />
-<%= render @items %>
+<%= render partial: 'categories/categories_index', locals: {categories: @categories} %>
+
+ <%= render partial: 'items/index', locals: {items: @items} %>
