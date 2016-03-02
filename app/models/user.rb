@@ -24,7 +24,19 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :carts
+  # belongs_to :current_cart, class_name: "Cart"
 
   attr_accessor :current_cart
+
+  def current_cart
+    unless carts.last && carts.last.status == 'not submittd'
+      carts << carts.create
+    end
+    carts.last
+  end
+
+  def current_cart=(new_cart)
+    carts.push(new_cart)
+  end
 
 end
