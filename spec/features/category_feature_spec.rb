@@ -4,7 +4,7 @@ describe 'Feature Test: Category', :type => :feature do
     before(:each) do
       @category = Category.first
       @items = @category.items
-      visit category_path(@category)
+      visit (@category)
     end
 
     it "Lists Category Title" do
