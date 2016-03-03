@@ -1,2 +1,2 @@
 <h1><%= @item.title %></h1>
-<h2>$ <%= to_currency(@item.price) %></h2>
+<h2>$ <%= @item.price.to_f/100 %></h2>
