@@ -10,7 +10,7 @@
   <% end %> </p>
 <% end %>
 
-<p>Order total: <strong>$<%= current_user.current_cart.total.to_f/100 %></strong> </p>
+<p>Order total: <strong>$<%= @cart.total.to_f/100 %></strong> </p>
 
 <% if @cart.status == 'not submitted' %>
   <%= button_to 'Checkout', checkout_path %>

@@ -22,7 +22,7 @@ class Item < ActiveRecord::Base
 
   def remove(amount)
     new_inventory = inventory - amount
-    inventory = new_inventory
+    self.inventory = new_inventory
     save
   end
 

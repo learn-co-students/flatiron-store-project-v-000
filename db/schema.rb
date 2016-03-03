@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160302192430) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.integer  "current_cart_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
