@@ -34,7 +34,7 @@ class Cart < ActiveRecord::Base
   def checkout
     remove_inventory
     user.remove_cart
-    status = 'submitted'
+    self.status = 'submitted'
     save
   end
 
