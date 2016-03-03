@@ -26,10 +26,10 @@ class User < ActiveRecord::Base
   has_many :carts
   # belongs_to :current_cart, class_name: "Cart"
 
-  attr_accessor :current_cart
+  # attr_accessor :current_cart
 
   def current_cart
-    unless carts.last && carts.last.status == 'not submittd'
+    if carts.last && carts.last.status != 'not submittd'
       carts << carts.create
     end
     carts.last
