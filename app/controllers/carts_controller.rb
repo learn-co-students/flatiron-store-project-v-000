@@ -7,7 +7,6 @@ class CartsController < ApplicationController
   def checkout
     cart = Cart.find params[:id]
     cart.checkout
-    # binding.pry
     redirect_to cart_path(cart)
   end
 

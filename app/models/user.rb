@@ -24,19 +24,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :carts
-  # belongs_to :current_cart, class_name: "Cart"
+  belongs_to :current_cart, :class_name => "Cart"
 
-  # attr_accessor :current_cart
-
-  def current_cart
-    if !carts.last || carts.last.status != 'not submitted'
-      carts << carts.create
-    end
-    carts.last
+  def create_current_cart
+    new_cart = carts.create
+    self.current_cart_id = new_cart.id
+    save
   end
 
-  def current_cart=(new_cart)
-    carts.push(new_cart)
+  def remove_cart
+    self.current_cart_id = nil
+    save
   end
 
 end
