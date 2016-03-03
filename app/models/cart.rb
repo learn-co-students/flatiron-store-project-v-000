@@ -15,7 +15,7 @@ class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
   belongs_to :user
 
-  attr_accessor :status
+  # attr_accessor :status
 
   def add_item(item_id)
     if item_ids.include?(item_id.to_i)
@@ -32,7 +32,6 @@ class Cart < ActiveRecord::Base
   end
 
   def checkout
-    binding.pry
     remove_inventory
     user.remove_cart
     status = 'submitted'
