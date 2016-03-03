@@ -12,10 +12,18 @@
 #
 
 class Item < ActiveRecord::Base
+
   belongs_to :category
   has_many :line_items
 
-  def self.available_items 
-    where("inventory > 0")
+  def self.available_items
+    where('inventory > ?', 0)
   end
+
+  def remove(amount)
+    new_inventory = inventory - amount
+    inventory = new_inventory
+    save
+  end
+
 end

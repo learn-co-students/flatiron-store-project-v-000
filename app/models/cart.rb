@@ -29,4 +29,19 @@ class Cart < ActiveRecord::Base
     line_items.inject(0) { |sum, line_item| sum + line_item.total}
   end
 
+  def checkout
+    remove_inventory
+    user.current_cart = nil
+    status = 'submitted'
+    save
+  end
+
+  private
+
+  def remove_inventory
+    line_items.each do |line_item|
+      line_item.item.remove(line_item.quantity)
+    end
+  end
+
 end
