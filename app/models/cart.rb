@@ -16,7 +16,7 @@ class Cart < ActiveRecord::Base
   belongs_to :user
 
   def add_item(item_id)
-    if item_ids.include?(item_id)
+    if item_ids.include?(item_id.to_i)
       current_line_item = line_items.find_by(item_id: item_id)
       current_line_item.quantity += 1
       current_line_item
