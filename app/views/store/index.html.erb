@@ -1,3 +1,7 @@
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
 <%= render partial: 'categories/categories_index', locals: {categories: @categories} %>
 
  <%= render partial: 'items/index', locals: {items: @items} %>
