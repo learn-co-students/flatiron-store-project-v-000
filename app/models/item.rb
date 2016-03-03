@@ -20,4 +20,10 @@ class Item < ActiveRecord::Base
     where('inventory > ?', 0)
   end
 
+  def remove(amount)
+    new_inventory = inventory - amount
+    inventory = new_inventory
+    save
+  end
+
 end

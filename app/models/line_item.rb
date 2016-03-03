@@ -19,4 +19,5 @@ class LineItem < ActiveRecord::Base
     item.price * quantity
   end
 
+
 end
