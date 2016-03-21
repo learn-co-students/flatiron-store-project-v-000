@@ -10,6 +10,7 @@ We're going to build an e-commerce site! We're going to make an online store whe
   1. Have just an email and password
   2. Should be able to log in and log out
   3. Also sign up
+  4. Note: You must use the Devise gem to set up user for tests to pass. 
 
 ### Items
 
@@ -30,4 +31,3 @@ We're going to build an e-commerce site! We're going to make an online store whe
   2. Users should be able to sign in/out from the navigation bar
   3. Users should always be able to go "home"
   4. If the user has a current cart, there should be a "Cart" link to their current cart
-
