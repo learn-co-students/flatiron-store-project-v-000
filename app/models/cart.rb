@@ -15,8 +15,6 @@ class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
   belongs_to :user
 
-  # attr_accessor :status
-
   def add_item(item_id)
     if item_ids.include?(item_id.to_i)
       current_line_item = line_items.find_by(item_id: item_id)
@@ -34,8 +32,7 @@ class Cart < ActiveRecord::Base
   def checkout
     remove_inventory
     user.remove_cart
-    self.status = 'submitted'
-    save
+    update(status: 'submitted')
   end
 
   private
