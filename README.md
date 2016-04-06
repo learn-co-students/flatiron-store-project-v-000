@@ -10,7 +10,8 @@ We're going to build an e-commerce site! We're going to make an online store whe
   1. Have just an email and password
   2. Should be able to log in and log out
   3. Also sign up
-  4. Note: You must use the Devise gem to set up user for tests to pass. 
+  4. Note: You must use the Devise gem to set up user for tests to pass.
+  5. You may find that you're missing some seed data. Look at the error messages you get carefully and don't be surprised if you have to [add some seed data](http://edgeguides.rubyonrails.org/active_record_migrations.html#migrations-and-seed-data)
 
 ### Items
 
