@@ -28,7 +28,6 @@ group :test, :development do
   gem "capybara"
   gem "launchy"
   gem "rack_session_access"
-  gem "capybara-webkit"
   gem "selenium-webdriver"
   gem "better_errors"
   gem "binding_of_caller"

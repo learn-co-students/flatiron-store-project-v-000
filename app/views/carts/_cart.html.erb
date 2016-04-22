@@ -1,0 +1,10 @@
+<h2>Cart Created <%=cart.created_at.strftime("%c")%></h2>
+<% cart.line_items.each do |line_item| %>
+  <p><%= link_to line_item.item.title, item_path(line_item.item) %> | <%= number_to_currency(to_currency(line_item.item.price)) %> | Quantity: <%= line_item.quantity %> | <% if line_item.item.inventory < 5 %>
+    <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
+  <% end %> </p>
+<% end %>
+
+<p>Order total: <strong><%= number_to_currency(to_currency(cart.total)) %></strong> </p>
+
+<%= button_to 'Checkout', checkout_path(cart) if cart.status != "submitted" %>

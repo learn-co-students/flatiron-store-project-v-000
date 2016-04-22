@@ -1,16 +1,14 @@
-<h1>Your Cart</h1>
+<h1><%= @category.title %></h1>
 
-<% if notice %>
-  <p><%= notice %></p>
-<% end %>
-
-<% @cart.line_items.each do |line_item| %>
-  <p><%= link_to line_item.item.title, item_path(line_item.item) %> | $<%= line_item.item.price.to_f/100 %> | Quantity: <%= line_item.quantity %> | <% if line_item.item.inventory < 5 %>
-    <strong>There are only <%= line_item.item.inventory %> left in stock.</strong>
-  <% end %> </p>
-<% end %>
-
-<p>Order total: <strong>$<%= @cart.total.to_f/100 %></strong> </p>
-<% if @cart.status == 'not submitted' %>
-  <%= button_to 'Checkout', checkout_path %>
-<% end %>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= link_to item.title, item_path(item) %> - $<%= item.price.to_f/100  %>
+    </li>
+    <% if user_signed_in? %>
+      <%= form_tag "/line_items/#{item.id}" do %>
+        <%= submit_tag "Add to Cart" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>

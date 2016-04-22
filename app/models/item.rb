@@ -12,7 +12,6 @@
 #
 
 class Item < ActiveRecord::Base
-
   belongs_to :category
   has_many :line_items
 
@@ -23,5 +22,4 @@ class Item < ActiveRecord::Base
   def remove(amount)
     update(inventory: inventory - amount)
   end
-
 end

@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-
   def show
     @cart = Cart.find(params[:id])
   end
@@ -9,5 +8,4 @@ class CartsController < ApplicationController
     cart.checkout
     redirect_to cart_path(cart)
   end
-
 end
