@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   has_many :carts
+  has_many :orders
   belongs_to :current_cart, :class_name => "Cart"
 
   def create_current_cart
