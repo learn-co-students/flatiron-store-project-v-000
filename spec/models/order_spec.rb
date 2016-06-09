@@ -19,15 +19,18 @@ RSpec.describe Order, :type => :model do
   end
 
   it 'can calculate its total' do
-    Item.second.order_items.create(quantity: 2, order: @order, total_line_price: @item.price * 2)
-    expect(@order.total).to eq(@item.price + Item.second.price * 2)
+    @second_item = Item.second
+    @second_item.order_items.create(quantity: 2, order: @order, total_line_price: @second_item.price * 2)
+    @order_total = @item.price + (@second_item.price * 2)
+    expect(@order.total).to eq(@order_total)
   end
 
   it 'can calculate its total even if item price has changed' do
     @second_item = Item.second
-    @second_item.order_items.create(quantity: 1, order: @order, total_line_price: @item.price)
+    @second_item.order_items.create(quantity: 1, order: @order, total_line_price: @second_item.price)
+    @order_total = @item.price + @second_item.price
     @second_item.update(price: (@second_item.price+1))
-    expect(@order.total).to eq(@item.price + @second_item.price + 1)
+    expect(@order.total).to eq(@order_total)
   end
 
 
