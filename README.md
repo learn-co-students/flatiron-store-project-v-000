@@ -36,5 +36,5 @@ We're going to build an e-commerce site! We're going to make an online store whe
 
 ## Resources 
 
-* [Lab Review](https://github.com/learn-co-curriculum/rails-video-review-flatiron-store-review)
+* [Lab Review](https://www.youtube.com/watch?v=x_qQCnYPyBk)
 
