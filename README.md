@@ -37,4 +37,4 @@ We're going to build an e-commerce site! We're going to make an online store whe
 ## Resources 
 
 * [Lab Review](https://www.youtube.com/watch?v=x_qQCnYPyBk)
-
+<p class='util--hide'>View <a href='https://learn.co/lessons/flatiron-store-project'>Flatiron Store Project</a> on Learn.co and start learning to code for free.</p>
