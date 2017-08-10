@@ -45,7 +45,7 @@ For more information, check out [`:class_name`][class_name] and [`:foreign_key`]
   - [`:foreign_key`][foreign_key]
 * [StackOverflow — class_name foreign_key in Rails model][StackOverflow]
 * [SitePoint — Brush up your knowledge of Rails associations][SitePoint]
-* [Lab Review](https://www.youtube.com/watch?v=x_qQCnYPyBk)
+* [Video: Lab Review](https://www.youtube.com/watch?v=x_qQCnYPyBk)
 
 [RailsGuides]: http://guides.rubyonrails.org/association_basics.html
 [class_name]: http://guides.rubyonrails.org/association_basics.html#options-for-belongs-to-class-name
