@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2'
-gem 'sass-rails', '4.0.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'devise'
+gem 'rails', '5.0.7.1'
+gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'sass-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'uglifier'
+gem 'bootsnap'
 
-group :test, :development do
-  gem "rspec-rails"
+gem 'sqlite3', '~>1.3.6'
+
+group :development, :test do
+  gem 'rack_session_access'
   gem "capybara"
+
   gem "launchy"
   gem "rack_session_access"
   gem "selenium-webdriver"
@@ -20,12 +22,10 @@ group :test, :development do
   gem "factory_bot_rails"
   gem "simplecov"
   gem "database_cleaner"
-  gem "sqlite3"
-  gem "pry"
-  gem "guard-rspec", require: false
-  gem "thin"
+  gem "pry-byebug"
+  gem "rspec-rails"
 end
 
-gem "bootstrap-sass", "~> 3.1.1"
-gem "faker"
-gem "friendly_id"
+group :test do
+  gem 'rspec-collection_matchers'
+end
