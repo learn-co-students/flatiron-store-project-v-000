@@ -13,6 +13,14 @@ gem 'sqlite3', '~>1.3.6'
 group :development, :test do
   gem 'rack_session_access'
   gem "capybara"
+
+  gem "launchy"
+  gem "rack_session_access"
+  gem "selenium-webdriver"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "factory_bot_rails"
+  gem "simplecov"
   gem "database_cleaner"
   gem "pry-byebug"
   gem "rspec-rails"
